@@ -1,0 +1,13 @@
+prefix=/c/code/sane-backends/build
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+libs= -ldl  -lm         -L/c/code/libusb-1.0.26-binaries/libusb-MinGW-x64/lib -lusb-1.0   
+
+Name: SANE Backends
+Description: Backends for SANE, the universal scanner interface
+Version: 1.1.1.362-6b588
+Requires:
+Libs: -L${libdir} -lsane
+Libs.private: ${libs}
+Cflags: -I${includedir}
