@@ -1991,7 +1991,7 @@ main (int argc, char **argv)
 	if (verbose > 1)
 	  printf ("ignoring libusb devices\n");
       }
-    else
+    else 
       {
 	libusb_device **devlist;
 	ssize_t devcnt;
@@ -2010,6 +2010,16 @@ main (int argc, char **argv)
 	    goto failed_libusb_1_0;
 	  }
 
+/* 	ret = libusb_set_option(sfs_usb_ctx, LIBUSB_OPTION_USE_USBDK);
+	
+	if (ret < 0)
+	  {
+	    printf ("# Could not initialize libusb-1.0 with USBDK, error %d\n", ret);
+	    printf ("# Skipping libusb devices\n");
+
+	    goto failed_libusb_1_0;
+	  } */
+
 	if (verbose > 3)
 #if LIBUSB_API_VERSION >= 0x01000106
           libusb_set_option (sfs_usb_ctx, LIBUSB_OPTION_LOG_LEVEL,
@@ -2021,7 +2031,7 @@ main (int argc, char **argv)
 	devcnt = libusb_get_device_list (sfs_usb_ctx, &devlist);
 	if (devcnt < 0)
 	  {
-	    printf ("# Could not get device list, error %d\n", ret);
+	    printf ("# Could not get device list, error %d\n", devcnt);
 
 	    goto deinit_libusb_1_0;
 	  }

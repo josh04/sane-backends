@@ -19,7 +19,8 @@
 */
 
 #define DEBUG_DECLARE_ONLY
-
+#define _BSD_SOURCE
+#include <unistd.h>
 #include "scanner_interface_usb.h"
 #include "low.h"
 

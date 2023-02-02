@@ -23,9 +23,9 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include <../include/sane/config.h>
+#include "../include/sane/config.h"
 
-#include "lgetopt.h"
+#include "getopt.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
